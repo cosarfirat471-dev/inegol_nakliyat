@@ -1,5 +1,5 @@
-/* --- 1. FONT IMPORT --- */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap');
+/* src/components/Navbar.css */
+/* GÜNCELLEME: Font import'u buradan silindi */
 
 /* --- 2. GÖRSEL DEĞİŞKENLER (iOS 18 DARK THEME) --- */
 :root {
@@ -147,7 +147,7 @@ body {
   }
 }
 
-/* Kamyon Hareketi Mobile (DÜZELTİLDİ: SENKRONİZE VE DOLU) */
+/* Kamyon Hareketi Mobile */
 @keyframes truckMoveMobile {
   0% { 
     color: white; 

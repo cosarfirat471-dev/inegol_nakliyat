@@ -8,7 +8,6 @@ import {
   RiInstagramLine, RiFacebookCircleLine, RiArrowRightSLine 
 } from 'react-icons/ri';
 
-// Assets'ten büyük logoyu alıyoruz
 import logoLarge from '../assets/logo-lg.png'; 
 
 const Footer: React.FC = () => {
@@ -27,22 +26,35 @@ const Footer: React.FC = () => {
           <div className="space-y-6 text-center md:text-left">
             <img 
               src={logoLarge} 
-              alt={general.title || "Logo"} 
+              alt={general.title || "İnegöl Nakliyat Logo"} 
               className="h-64 w-auto object-contain mx-auto md:mx-0 md:h-52 -mt-4" 
             />
             
+            {/* DÜZELTME: Renk kontrastı slate-400 yapıldı */}
             <p className="text-slate-400 text-sm leading-relaxed">
               {footer.description || "İnegöl ve çevresinde yılların tecrübesiyle, sigortalı ve asansörlü taşımacılık hizmeti sunuyoruz."}
             </p>
             
             <div className="flex gap-4 justify-center md:justify-start">
               {footer.instagram && (
-                <a href={footer.instagram} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-pink-600 transition-colors">
+                <a 
+                  href={footer.instagram} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  aria-label="Instagram Sayfamız"
+                  className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-pink-600 transition-colors"
+                >
                   <RiInstagramLine className="text-xl" />
                 </a>
               )}
               {footer.facebook && (
-                <a href={footer.facebook} target="_blank" rel="noreferrer" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-blue-600 transition-colors">
+                <a 
+                  href={footer.facebook} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  aria-label="Facebook Sayfamız"
+                  className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-white hover:bg-blue-600 transition-colors"
+                >
                   <RiFacebookCircleLine className="text-xl" />
                 </a>
               )}
@@ -96,13 +108,10 @@ const Footer: React.FC = () => {
         {/* ALT KISIM */}
         <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           
-          {/* SOL: COPYRIGHT (Admin Panelinden Yönetilir) */}
-          {/* Varsayılan: Site Başlığı (general.title) */}
-          <p className="text-slate-500 text-sm text-center md:text-left">
+          <p className="text-slate-400 text-sm text-center md:text-left">
             &copy; {new Date().getFullYear()} <b>{footer.copyrightText || general.title}</b>. Tüm hakları saklıdır.
           </p>
           
-          {/* SAĞ: WEB DEVELOPER (Sabit İsim) */}
           <div className="text-slate-600 text-xs text-center md:text-right">
             Web Developer: <span className="text-slate-400 font-medium hover:text-white transition-colors cursor-default">Talha Atalay Körlü</span>
           </div>
