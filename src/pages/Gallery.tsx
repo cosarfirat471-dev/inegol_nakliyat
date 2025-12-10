@@ -3,41 +3,41 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { RiImage2Line, RiZoomInLine, RiUploadCloud2Line } from 'react-icons/ri';
-import { useData } from '../context/DataContext'; // Veriyi buradan çekeceğiz
+import { useData } from '../context/DataContext';
 
 const Gallery: React.FC = () => {
-  const { data } = useData(); // Admin verisi geldi
+  const { data } = useData(); 
 
-  // Veri henüz yüklenmediyse veya boşsa
+  // Veri henüz yüklenmediyse veya boşsa boş dizi döner
   const galleryImages = data?.gallery || [];
 
   return (
     <div className="min-h-screen p-6 md:p-12">
       <Helmet>
         <title>Galeri | İnegöl Nakliyat Çalışmalarımızdan Kareler</title>
-        <meta name="description" content="İnegöl evden eve nakliyat, asansörlü taşıma ve paketleme işlemlerimizden fotoğraflar." />
+        <meta name="description" content="İnegöl evden eve nakliyat, asansörlü taşıma, ofis taşıma ve paketleme işlemlerimizden gerçek fotoğraflar. Referanslarımızı inceleyin." />
       </Helmet>
 
       <header className="text-center mb-12">
         <RiImage2Line className="text-6xl text-brand-blue mx-auto mb-4 shadow-neon-blue rounded-xl p-2" />
         <h1 className="text-4xl font-extrabold text-white mb-3">Fotoğraf Galerisi</h1>
         <p className="text-text-muted max-w-2xl mx-auto">
-          Sözle değil, icraatle konuşuyoruz. Tamamladığımız taşımalardan ve araçlarımızdan kareler.
+          Sözle değil, icraatle konuşuyoruz. Tamamladığımız taşımalardan ve geniş araç filomuzdan kareler.
         </p>
       </header>
 
       {/* GALERİ GRID */}
       {galleryImages.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-          {galleryImages.map((img: any) => (
+          {galleryImages.map((img: any, index: number) => (
             <div 
               key={img.id} 
               className="group relative h-72 rounded-2xl overflow-hidden border border-glass-border-dark cursor-pointer shadow-glass hover:shadow-neon-blue transition-all duration-500"
             >
-              {/* Resim Kaynağı Veritabanından (Base64) */}
+              {/* SEO DÜZELTMESİ: Alt etiketi artık dinamik ve açıklayıcı */}
               <img 
                 src={img.url} 
-                alt="İnegöl Nakliyat Galeri" 
+                alt={`İnegöl Nakliyat Referans Çalışması ${index + 1} - ${img.date || 'Evden Eve Taşıma'}`} 
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="lazy"
               />

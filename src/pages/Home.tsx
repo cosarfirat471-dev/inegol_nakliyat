@@ -6,7 +6,8 @@ import { RiRocketLine, RiShieldStarLine, RiCustomerService2Line, RiBox3Line, RiM
 
 const Home: React.FC = () => {
   return (
-    <div className="home-page" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    // SEO DÜZELTMESİ: 'div' yerine 'main' kullanıldı.
+    <main className="home-page" style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       
       {/* 1. SEO Helmet */}
       <Helmet>
@@ -14,8 +15,12 @@ const Home: React.FC = () => {
         <meta name="description" content="Bursa İnegöl ve çevresinde profesyonel, sigortalı ve asansörlü evden eve nakliyat hizmeti. En hızlı ve güvenilir taşıma için hemen fiyat teklifi alın." />
       </Helmet>
       
-      {/* 2. HERO SECTION (Logo Kaldırıldı) */}
-      <section style={{ textAlign: 'center', maxWidth: '800px', padding: '0 20px', marginBottom: '60px', marginTop: '60px' }}>
+      {/* 2. HERO SECTION */}
+      {/* SEO DÜZELTMESİ: 'section' etiketi ve 'aria-label' eklendi. */}
+      <section 
+        aria-label="Giriş Bölümü" 
+        style={{ textAlign: 'center', maxWidth: '800px', padding: '0 20px', marginBottom: '60px', marginTop: '60px' }}
+      >
         
         {/* H1 Başlık */}
         <h1 style={{ fontSize: '3rem', fontWeight: '900', lineHeight: '1.2', marginBottom: '20px' }}>
@@ -29,14 +34,17 @@ const Home: React.FC = () => {
       </section>
 
       {/* 3. ÖZELLİKLER GRID */}
-      <section style={{ 
-        display: 'grid', 
-        gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-        gap: '25px', 
-        width: '90%', 
-        maxWidth: '1200px',
-        paddingBottom: '50px'
-      }}>
+      <section 
+        aria-label="Hizmet Özellikleri"
+        style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
+          gap: '25px', 
+          width: '90%', 
+          maxWidth: '1200px',
+          paddingBottom: '50px'
+        }}
+      >
         
         <div className="glass-card">
           <div style={{ fontSize: '2.5rem', color: '#007aff', marginBottom: '15px' }}><RiRocketLine /></div>
@@ -65,12 +73,15 @@ const Home: React.FC = () => {
       </section>
 
       {/* 4. YEREL OTORİTE BÖLÜMÜ */}
-      <section style={{ 
-          width: '90%', 
-          maxWidth: '1200px', 
-          padding: '60px 20px', 
-          textAlign: 'center' 
-      }}>
+      <section 
+        aria-label="Neden Biz"
+        style={{ 
+            width: '90%', 
+            maxWidth: '1200px', 
+            padding: '60px 20px', 
+            textAlign: 'center' 
+        }}
+      >
           <h2 className="text-3xl font-bold text-white mb-8">
               <span className="highlight">İnegöl'ün En Güvenilir</span> Nakliyat Çözümleri
           </h2>
@@ -103,7 +114,7 @@ const Home: React.FC = () => {
           </div>
       </section>
 
-    </div>
+    </main>
   );
 };
 
