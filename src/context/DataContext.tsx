@@ -11,6 +11,11 @@ const defaultData = {
     visitCount: 0,
     offerCount: 0
   },
+  // YENİ: HAKKIMIZDA ALANI
+  about: {
+    title: "Biz Kimiz?",
+    content: "İnegöl'de yılların verdiği tecrübe ile evden eve nakliyat sektöründe güvenin adresi olduk. Yerli ve uzman kadromuz, geniş araç filomuz ve asansörlü taşıma sistemlerimizle eşyalarınızı sigortalı olarak taşıyoruz."
+  },
   contact: {
     address: "Osmaniye Mah. Altay Cad. No:1, İnegöl / BURSA",
     email: "info@inegolnakliyat.com",
@@ -29,8 +34,6 @@ const defaultData = {
     kmPrice: 50,       
     elevatorCost: 400, 
     stairsCost: 600,   
-    
-    // YENİ YAPI: MİN - MAX ARALIKLI FİYATLAR
     rooms: {
       '1+0': { min: 4000, max: 6000 },
       '2+0': { min: 5000, max: 7000 },
@@ -56,11 +59,22 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (docSnap.exists()) {
         const incomingData = docSnap.data();
         
-        // Veri yapısını güvenli birleştirme
-        // Eğer veritabanında eski (tek sayı) fiyatlar varsa, bunları min-max yapısına çevirmemiz gerekebilir
-        // Ancak admin panelden bir kere kaydet basınca düzeleceği için burayı basit tutuyoruz.
-        
-        setData({ ...defaultData, ...incomingData });
+        // Veri birleştirme (Eksik alanları varsayılanla tamamla)
+        const mergedRooms = { ...defaultData.prices.rooms, ...incomingData.prices?.rooms };
+        const mergedAbout = { ...defaultData.about, ...incomingData.about }; // Hakkımızda birleştirme
+
+        const mergedData = {
+            ...defaultData,
+            ...incomingData,
+            about: mergedAbout,
+            prices: {
+                ...defaultData.prices,
+                ...incomingData.prices,
+                rooms: mergedRooms
+            }
+        };
+
+        setData(mergedData);
       } else {
         setDoc(doc(db, "siteContent", "mainData"), defaultData);
       }
