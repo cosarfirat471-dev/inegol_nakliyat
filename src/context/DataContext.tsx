@@ -16,24 +16,30 @@ const defaultData = {
     email: "info@inegolnakliyat.com",
     mapEmbedUrl: ""
   },
-  // YENİ: FOOTER VE SOSYAL MEDYA AYARLARI
   footer: {
     description: "İnegöl ve çevresinde yılların tecrübesiyle, sigortalı ve asansörlü taşımacılık hizmeti sunuyoruz.",
     facebook: "https://facebook.com",
     instagram: "https://instagram.com",
-    copyrightText: "Özel Tasarım"
+    copyrightText: "İnegöl Nakliyat"
   },
   regions: [
     "Yeniceköy Mahallesi", "Akhisar Mahallesi", "Alanyurt", "Cerrah"
   ],
   prices: {
-    basePrice: 2000,
-    kmPrice: 50,
-    elevatorCost: 300,
-    stairsCost: 500,
-    items: {
-      sofa3: 150, sofa2: 100, armchair: 50, diningTable: 100,
-      bedDouble: 200, wardrobe: 250, whiteGoods: 100, box: 20,
+    kmPrice: 50,       
+    elevatorCost: 400, 
+    stairsCost: 600,   
+    
+    // YENİ YAPI: MİN - MAX ARALIKLI FİYATLAR
+    rooms: {
+      '1+0': { min: 4000, max: 6000 },
+      '2+0': { min: 5000, max: 7000 },
+      '1+1': { min: 6000, max: 8000 },
+      '2+1': { min: 8000, max: 10000 },
+      '3+1': { min: 10000, max: 12000 },
+      '4+1': { min: 14000, max: 17000 },
+      '5+1': { min: 18000, max: 22000 },
+      '6+1': { min: 22000, max: 30000 }
     }
   },
   gallery: [] 
@@ -48,7 +54,13 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   useEffect(() => {
     const unsub = onSnapshot(doc(db, "siteContent", "mainData"), (docSnap) => {
       if (docSnap.exists()) {
-        setData({ ...defaultData, ...docSnap.data() });
+        const incomingData = docSnap.data();
+        
+        // Veri yapısını güvenli birleştirme
+        // Eğer veritabanında eski (tek sayı) fiyatlar varsa, bunları min-max yapısına çevirmemiz gerekebilir
+        // Ancak admin panelden bir kere kaydet basınca düzeleceği için burayı basit tutuyoruz.
+        
+        setData({ ...defaultData, ...incomingData });
       } else {
         setDoc(doc(db, "siteContent", "mainData"), defaultData);
       }
