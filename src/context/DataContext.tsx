@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { doc, onSnapshot, setDoc, updateDoc } from 'firebase/firestore';
 import { db } from '../lib/firebase';
 
+// Varsayılan Veri Yapısı
 const defaultData = {
   general: {
     phone: "905XXXXXXXXXX",
@@ -11,7 +12,6 @@ const defaultData = {
     visitCount: 0,
     offerCount: 0
   },
-  // YENİ: HAKKIMIZDA ALANI
   about: {
     title: "Biz Kimiz?",
     content: "İnegöl'de yılların verdiği tecrübe ile evden eve nakliyat sektöründe güvenin adresi olduk. Yerli ve uzman kadromuz, geniş araç filomuz ve asansörlü taşıma sistemlerimizle eşyalarınızı sigortalı olarak taşıyoruz."
@@ -31,9 +31,9 @@ const defaultData = {
     "Yeniceköy Mahallesi", "Akhisar Mahallesi", "Alanyurt", "Cerrah"
   ],
   prices: {
-    kmPrice: 50,       
+    kmPrice: 50,        
     elevatorCost: 400, 
-    stairsCost: 600,   
+    stairsCost: 600,    
     rooms: {
       '1+0': { min: 4000, max: 6000 },
       '2+0': { min: 5000, max: 7000 },
@@ -45,7 +45,8 @@ const defaultData = {
       '6+1': { min: 22000, max: 30000 }
     }
   },
-  gallery: [] 
+  gallery: [], // Fotoğraflar
+  reviews: []  // YENİ: Müşteri Yorumları
 };
 
 const DataContext = createContext<any>(null);
@@ -60,8 +61,9 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
         const incomingData = docSnap.data();
         
         // Veri birleştirme (Eksik alanları varsayılanla tamamla)
+        // Özellikle yeni eklenen 'reviews' alanı eski veride yoksa hata vermesin diye
         const mergedRooms = { ...defaultData.prices.rooms, ...incomingData.prices?.rooms };
-        const mergedAbout = { ...defaultData.about, ...incomingData.about }; // Hakkımızda birleştirme
+        const mergedAbout = { ...defaultData.about, ...incomingData.about };
 
         const mergedData = {
             ...defaultData,
@@ -71,11 +73,14 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
                 ...defaultData.prices,
                 ...incomingData.prices,
                 rooms: mergedRooms
-            }
+            },
+            // Eğer veritabanında reviews yoksa boş dizi ata
+            reviews: incomingData.reviews || []
         };
 
         setData(mergedData);
       } else {
+        // Doküman yoksa varsayılanı oluştur
         setDoc(doc(db, "siteContent", "mainData"), defaultData);
       }
       setLoading(false);
