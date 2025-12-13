@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/*
 
-Sitemap: https://inegolnakliyat.netlify.app/sitemap.xml
+Sitemap: https://inegolevdenevenakliye/sitemap.xml
