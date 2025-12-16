@@ -12,8 +12,9 @@ const Home: React.FC = () => {
     <main className="w-full flex flex-col items-center">
       
       <Helmet>
-        <title>İnegöl Nakliyat | İnegöl'ün İlk ve Öncü Nakliye Firması</title>
-        <meta name="description" content="İnegöl'ün ilk nakliye firması. Ev, ofis, parça eşya taşıma ve kamyon kiralama hizmetleri. Yerli işçi kadrosuyla tüm Türkiye'ye hizmet veriyoruz." />
+        <title>İnegöl Evden Eve Nakliyat | Şehirler Arası & Asansörlü Taşıma</title>
+        <meta name="description" content="İnegöl'ün ilk ve öncü nakliye firması. Yerli kadro ile evden eve, ofis taşıma ve asansörlü nakliyat hizmetleri. Sigortalı ve güvenilir taşımacılık." />
+        <link rel="canonical" href="https://www.inegolevdenevenakliye.com/" />
       </Helmet>
       
       {/* HERO SECTION */}

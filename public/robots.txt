@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/*
 
-Sitemap: https://inegolevdenevenakliye/sitemap.xml
+Sitemap: https://www.inegolevdenevenakliye.com/sitemap.xml

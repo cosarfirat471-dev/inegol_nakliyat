@@ -13,7 +13,9 @@ const Regions = () => {
   return (
     <div className="min-h-screen pt-20 pb-20 px-4 max-w-6xl mx-auto">
       <Helmet>
-        <title>Hakkımızda | İnegöl Nakliyat</title>
+        <title>Hakkımızda & Hizmet Bölgeleri | İnegöl Nakliyat</title>
+        <meta name="description" content="İnegöl Nakliyat kimdir? Hizmet verdiğimiz mahalleler (Akhisar, Alanyurt, Yeniceköy) ve kurumsal vizyonumuz hakkında detaylı bilgi alın." />
+        <link rel="canonical" href="https://www.inegolevdenevenakliye.com/hakkimizda" />
       </Helmet>
 
       <div className="text-center mb-12">

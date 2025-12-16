@@ -13,7 +13,9 @@ const Contact = () => {
   return (
     <div className="min-h-screen pt-4 md:pt-10 pb-20 px-4 w-full max-w-6xl mx-auto flex flex-col items-center">
       <Helmet>
-        <title>İletişim | İnegöl Nakliyat</title>
+        <title>İletişim & Adres | İnegöl Nakliyat</title>
+        <meta name="description" content="İnegöl Nakliyat telefon numarası, adres ve konum bilgileri. 7/24 WhatsApp hattımızdan nakliye fiyat teklifi alabilirsiniz." />
+        <link rel="canonical" href="https://www.inegolevdenevenakliye.com/contact" />
       </Helmet>
 
       <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-8 md:mb-12">Bize Ulaşın</h1>

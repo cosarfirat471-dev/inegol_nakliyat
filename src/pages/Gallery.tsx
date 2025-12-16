@@ -33,7 +33,7 @@ const Gallery: React.FC = () => {
         name: name.trim(),
         text: comment.trim(),
         date: new Date().toLocaleDateString('tr-TR'),
-        // Rastgele renkli avatar (Basit bir görselleştirme için)
+        // Rastgele renkli avatar
         avatarColor: `hsl(${Math.random() * 360}, 70%, 50%)` 
       };
 
@@ -58,7 +58,8 @@ const Gallery: React.FC = () => {
     <div className="min-h-screen p-6 md:p-12">
       <Helmet>
         <title>Galeri & Müşteri Yorumları | İnegöl Nakliyat</title>
-        <meta name="description" content="Referanslarımız ve mutlu müşterilerimizin yorumları." />
+        <meta name="description" content="İnegöl Nakliyat araç filosu, tamamlanan taşımalarımız ve gerçek müşteri yorumları. Referanslarımızı inceleyin ve siz de yorum yapın." />
+        <link rel="canonical" href="https://www.inegolevdenevenakliye.com/gallery" />
       </Helmet>
 
       <header className="text-center mb-12">
