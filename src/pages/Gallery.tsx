@@ -60,6 +60,19 @@ const Gallery: React.FC = () => {
         <title>Galeri & Müşteri Yorumları | İnegöl Nakliyat</title>
         <meta name="description" content="İnegöl Nakliyat araç filosu, tamamlanan taşımalarımız ve gerçek müşteri yorumları. Referanslarımızı inceleyin ve siz de yorum yapın." />
         <link rel="canonical" href="https://www.inegolevdenevenakliye.com/gallery" />
+        
+        {/* Social Media Tags */}
+        <meta property="og:locale" content="tr_TR" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Galeri & Müşteri Yorumları | İnegöl Nakliyat" />
+        <meta property="og:description" content="Referanslarımız ve müşteri yorumları. İnegöl Nakliyat güvencesi." />
+        <meta property="og:url" content="https://www.inegolevdenevenakliye.com/gallery" />
+        <meta property="og:image" content="https://www.inegolevdenevenakliye.com/og-image.jpg" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Galeri ve Referanslar | İnegöl Nakliyat" />
+        <meta name="twitter:description" content="Mutlu müşterilerimiz ve araç filomuz." />
+        <meta name="twitter:image" content="https://www.inegolevdenevenakliye.com/og-image.jpg" />
       </Helmet>
 
       <header className="text-center mb-12">

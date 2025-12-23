@@ -23,8 +23,8 @@ const defaultData = {
   },
   footer: {
     description: "İnegöl ve çevresinde yılların tecrübesiyle, sigortalı ve asansörlü taşımacılık hizmeti sunuyoruz.",
-    facebook: "https://facebook.com",
-    instagram: "https://instagram.com",
+    facebook: "https://www.facebook.com/inegol_nakliye16",
+    instagram: "https://www.instagram.com/inegol_nakliye16",
     copyrightText: "İnegöl Nakliyat"
   },
   regions: [

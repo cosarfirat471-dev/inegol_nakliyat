@@ -6,6 +6,8 @@ import {
   RiTruckLine, RiBuilding4Line, RiBox3Line, 
   RiMapPinLine, RiTeamLine, RiShakeHandsLine, RiSteering2Line
 } from 'react-icons/ri';
+import truckImg from '../assets/truck.jpg';
+import Testimonials from '../components/Testimonials';
 
 const Home: React.FC = () => {
   return (
@@ -15,16 +17,59 @@ const Home: React.FC = () => {
         <title>İnegöl Evden Eve Nakliyat | Şehirler Arası & Asansörlü Taşıma</title>
         <meta name="description" content="İnegöl'ün ilk ve öncü nakliye firması. Yerli kadro ile evden eve, ofis taşıma ve asansörlü nakliyat hizmetleri. Sigortalı ve güvenilir taşımacılık." />
         <link rel="canonical" href="https://www.inegolevdenevenakliye.com/" />
+        
+        {/* Social Media Tags */}
+        <meta property="og:locale" content="tr_TR" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="İnegöl Evden Eve Nakliyat | Şehirler Arası & Asansörlü Taşıma" />
+        <meta property="og:description" content="İnegöl'ün ilk ve öncü nakliye firması. Yerli kadro ile güvenilir taşıma." />
+        <meta property="og:url" content="https://www.inegolevdenevenakliye.com/" />
+        <meta property="og:image" content="https://www.inegolevdenevenakliye.com/og-image.jpg" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="İnegöl Evden Eve Nakliyat" />
+        <meta name="twitter:description" content="İnegöl'ün güvenilir nakliye firması. Asansörlü ve sigortalı taşımacılık." />
+        <meta name="twitter:image" content="https://www.inegolevdenevenakliye.com/og-image.jpg" />
       </Helmet>
       
       {/* HERO SECTION */}
-      <section className="text-center w-full max-w-4xl px-4 my-12 md:my-20">
-        <h1 className="text-4xl md:text-6xl font-black leading-tight mb-6 text-white">
-          İnegöl'ün <span className="highlight">İlk Nakliye Firması</span>
-        </h1>
-        <p className="text-lg md:text-xl text-slate-400 leading-relaxed max-w-2xl mx-auto">
-          Tecrübe ve güvenle, tamamı <span className="text-white font-bold">yerli işçi</span> kadromuzla İnegöl'den <span className="text-white font-bold">tüm Türkiye'ye</span> hizmet veriyoruz.
-        </p>
+      {/* HERO SECTION */}
+      <section className="relative w-full max-w-7xl mx-auto mt-8 mb-24 px-4">
+        <div className="relative w-full h-[500px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
+          {/* Background Image */}
+          <div className="absolute inset-0">
+            <img 
+              src={truckImg} 
+              alt="İnegöl Nakliyat Tır" 
+              className="w-full h-full object-cover"
+            />
+            {/* Dark Overlay gradient for better text readability - Increased darkness */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/70 to-black/50"></div>
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-4 md:px-12">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-6 text-white drop-shadow-lg">
+              İnegöl'ün <span className="text-blue-500">İlk Nakliye Firması</span>
+            </h1>
+            <p className="text-lg md:text-2xl text-slate-200 leading-relaxed max-w-3xl mx-auto drop-shadow-md font-medium">
+              Tecrübe ve güvenle, tamamı <span className="text-blue-400 font-bold">yerli işçi</span> kadromuzla <br className="hidden md:block"/>
+              İnegöl'den <span className="text-blue-400 font-bold">tüm Türkiye'ye</span> hizmet veriyoruz.
+            </p>
+            
+            {/* CTA Buttons */}
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
+              <a href="/contact" className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all hover:scale-105 shadow-lg shadow-blue-900/50 flex items-center justify-center gap-2">
+                <RiTruckLine className="text-xl" />
+                Hemen Teklif Al
+              </a>
+              <a href="tel:+905555555555" className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold rounded-xl transition-all border border-white/20 hover:scale-105 flex items-center justify-center gap-2">
+                <RiShakeHandsLine className="text-xl" />
+                Bize Ulaşın
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* HİZMETLER */}
@@ -71,6 +116,9 @@ const Home: React.FC = () => {
               </div>
           </div>
       </section>
+
+      {/* TESTIMONIALS */}
+      <Testimonials />
 
     </main>
   );

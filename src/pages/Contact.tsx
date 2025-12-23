@@ -16,6 +16,19 @@ const Contact = () => {
         <title>İletişim & Adres | İnegöl Nakliyat</title>
         <meta name="description" content="İnegöl Nakliyat telefon numarası, adres ve konum bilgileri. 7/24 WhatsApp hattımızdan nakliye fiyat teklifi alabilirsiniz." />
         <link rel="canonical" href="https://www.inegolevdenevenakliye.com/contact" />
+        
+        {/* Social Media Tags */}
+        <meta property="og:locale" content="tr_TR" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="İletişim & Adres | İnegöl Nakliyat" />
+        <meta property="og:description" content="İnegöl Nakliyat iletişim bilgileri. Hemen fiyat teklifi alın." />
+        <meta property="og:url" content="https://www.inegolevdenevenakliye.com/contact" />
+        <meta property="og:image" content="https://www.inegolevdenevenakliye.com/og-image.jpg" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="İletişim | İnegöl Nakliyat" />
+        <meta name="twitter:description" content="7/24 Bize ulaşın. Asansörlü evden eve nakliyat." />
+        <meta name="twitter:image" content="https://www.inegolevdenevenakliye.com/og-image.jpg" />
       </Helmet>
 
       <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-8 md:mb-12">Bize Ulaşın</h1>

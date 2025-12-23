@@ -16,6 +16,19 @@ const Regions = () => {
         <title>Hakkımızda & Hizmet Bölgeleri | İnegöl Nakliyat</title>
         <meta name="description" content="İnegöl Nakliyat kimdir? Hizmet verdiğimiz mahalleler (Akhisar, Alanyurt, Yeniceköy) ve kurumsal vizyonumuz hakkında detaylı bilgi alın." />
         <link rel="canonical" href="https://www.inegolevdenevenakliye.com/hakkimizda" />
+        
+        {/* Social Media Tags */}
+        <meta property="og:locale" content="tr_TR" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Hakkımızda & Hizmet Bölgeleri | İnegöl Nakliyat" />
+        <meta property="og:description" content="İnegöl Nakliyat kurumsal vizyonu ve hizmet bölgeleri." />
+        <meta property="og:url" content="https://www.inegolevdenevenakliye.com/hakkimizda" />
+        <meta property="og:image" content="https://www.inegolevdenevenakliye.com/og-image.jpg" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Hakkımızda | İnegöl Nakliyat" />
+        <meta name="twitter:description" content="Tecrübeli kadro, geniş araç filosu ve hizmet bölgelerimiz." />
+        <meta name="twitter:image" content="https://www.inegolevdenevenakliye.com/og-image.jpg" />
       </Helmet>
 
       <div className="text-center mb-12">

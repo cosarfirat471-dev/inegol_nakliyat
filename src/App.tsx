@@ -41,7 +41,8 @@ const Layout = () => {
   return (
     <div className="App flex flex-col min-h-screen">
       {/* Sihirbaz açıkken WhatsApp butonunu gizle */}
-      {!showWizard && <FloatingActions />}
+      {/* Sihirbaz durumunu FloatingActions'a bildir */}
+      <FloatingActions isWizardOpen={showWizard} />
       
       <Navbar onOpenWizard={() => setShowWizard(true)} />
       
